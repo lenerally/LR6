@@ -198,3 +198,88 @@
 
 В процессе оформления выполняются промежуточные коммиты.
 
+
+## 10. Журнал команд
+
+Основные выполненные команды без результатов их выполнения:
+
+```bash
+git --version
+git config --get user.name
+git config --get user.email
+git clone https://github.com/lenerally/LR6.git
+cd LR6
+git remote -v
+git branch -a
+git pull origin master
+cat github-note.txt
+git log master --oneline
+git log origin/branch1 --oneline
+git log --all --graph --oneline --decorate
+git show HEAD
+git diff master origin/branch1
+git switch -c branch1 --track origin/branch1
+git switch master
+git status
+git merge branch1
+notepad mergefile.txt
+git add mergefile.txt
+git commit -m "Объединены master и branch1, конфликт разрешён"
+git log --graph --oneline --decorate -8
+git branch -d branch1
+git branch
+echo "First line" > practice.txt
+git add practice.txt
+git commit -m "Создан учебный файл"
+echo "Second line" >> practice.txt
+git add practice.txt
+git commit -m "Добавлена вторая строка"
+echo "Temporary line" >> practice.txt
+git add practice.txt
+git commit -m "Добавлена временная строка"
+cat practice.txt
+git log --oneline -5
+git revert --no-edit HEAD
+cat practice.txt
+git log --oneline -6
+git switch -c otchet
+notepad README.md
+mv screenshots~ screenshots
+git add README.md screenshots/
+git commit -m "Добавлены настройка Git и подготовка репозитория в отчёт"
+git add README.md
+git commit -m "Добавлены история веток, слияние и откат в отчёт"
+sed -i 's/\\//g' README.md
+git add README.md
+git commit -m "Исправлено Markdown-оформление отчёта"
+git log --all --date=short --pretty=format:"%h | %ad | %an | %s"
+```
+
+## 11. Форматированная история коммитов
+
+```text
+854dd57 | 2026-10-21 | 4515 Климина В. А. | Исправлено Markdown-оформление отчёта
+92bb40f | 2026-10-21 | 4515 Климина В. А. | Добавлены история веток, слияние и откат в отчёт
+ef88f71 | 2026-10-21 | 4515 Климина В. А. | Добавлены настройка Git и подготовка репозитория в отчёт
+23032ba | 2026-10-21 | 4515 Климина В. А. | Revert "Добавлена временная строка"
+9acf966 | 2026-10-21 | 4515 Климина В. А. | Добавлена временная строка
+f75a841 | 2026-10-21 | 4515 Климина В. А. | Добавлена вторая строка
+19f8b1b | 2026-10-21 | 4515 Климина В. А. | Создан учебный файл
+4bed0a4 | 2026-10-21 | 4515 Климина В. А. | Объединены master и branch1, конфликт разрешён
+c672fa7 | 2026-10-21 | lenerally | Create github-note.txt
+921f53b | 2020-11-21 | Kurtyanik | Обновление информации
+0f9f50d | 2020-11-21 | Kurtyanik | Заполнил файл
+c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
+3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
+```
+
+## Вывод
+
+В ходе лабораторной работы освоены настройка Git, создание Fork,
+клонирование репозитория и получение изменений с GitHub.
+Просмотрены история коммитов и различия между ветками.
+Выполнены слияние, ручное разрешение конфликта и удаление
+побочной ветки. Созданы последовательные коммиты и выполнен
+откат с сохранением истории. Отчёт оформлен в Markdown
+в отдельной ветке otchet.
+
